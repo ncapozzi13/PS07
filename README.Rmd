@@ -1,0 +1,37 @@
+---
+title: "The Best Books"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assignment: GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Code
+
+```{r cars, results='hide', message=FALSE}
+
+library(tidyverse)
+
+best_books <- read.csv("Best_Books_Ever.csv")
+
+```
+
+## Plot
+
+```{r pressure, echo=FALSE, results='hide', message=FALSE}
+
+ggplot(data = best_books, aes(x = rating))+
+  geom_histogram(color = "white", fill = "turquoise4")+
+  labs(title = "Rating of Most Popular Books", x = "Rating", y = "Number of Ratings")
+  theme_classic()
+         
+```
+
+Books and ratings were chosen from the GoodReads best books list.^[Tiwari, S. (2021) Best Book to Read in 2021 (Version 1) [Data Set]. kaggle. https://www.kaggle.com/shashwatwork/best-book-ever-data-for-2021/version/1]
+
+
